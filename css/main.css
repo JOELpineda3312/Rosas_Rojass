@@ -55,7 +55,7 @@ body {
 
 .button-container {
   position: absolute;
-  bottom: 10%; /* Ajuste para que el botón quede debajo del contenido */
+  bottom: 15%; /* Ajuste para que el botón quede debajo del contenido */
   left: 50%; /* Centra horizontalmente */
   transform: translateX(-50%); /* Corrige el desplazamiento para el centrado */
   z-index: 9999;
