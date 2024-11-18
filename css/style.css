@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ajustado para corrección */
+}
+
+body {
+    color: azure;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Centrar texto automáticamente */
+    background-color: black;
+    overflow: hidden; /* Evitar barras de desplazamiento no deseadas */
+    position: relative; /* Contenedor base */
+}
+
+#snow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Detrás del contenido principal */
+    overflow: hidden;
+}
+
+.greetings {
+    font-size: 7rem;
+    font-weight: 900;
+    text-align: center;
+    z-index: 1; /* Por encima de la nieve */
+    position: relative;
+}
+
+.greetings > span {
+    animation: glow 2.9s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        color: #24f8f8;
+        text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
+    }
+    10%, 90% {
+        color: #111;
+        text-shadow: none;
+    }
+}
+
+.greetings > span:nth-child(2) { animation-delay: .2s; }
+.greetings > span:nth-child(3) { animation-delay: .4s; }
+.greetings > span:nth-child(4) { animation-delay: .6s; }
+.greetings > span:nth-child(5) { animation-delay: .8s; }
+.greetings > span:nth-child(6) { animation-delay: 1s; }
+
+.description {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    z-index: 1; /* Por encima de la nieve */
+    position: relative;
+    text-shadow: 0 0 10px #5fe7e7, 0 0 20px #5fe7e7; /* Para que resalte */
+}
+
+.button-89 {
+    --b: 3px;   /* Grosor del borde */
+    --s: .45em; /* Tamaño del borde */
+    --color: #5fe7e7;
+    
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+      conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+      var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+    border: 0;
+    user-select: none;
+    touch-action: manipulation;
+    z-index: 1; /* Por encima de la nieve */
+    position: relative;
+}
+
+.button-89:hover,
+.button-89:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.button-89:active {
+    background: var(--color);
+    color: #fff;
+}
+
+/* Nieve */
+span.snowflake {
+    border-radius: 50%;
+    pointer-events: none;
+    position: absolute;
+    background: white;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 1; 
+    }
+    100% {
+        transform: scale(1) translateX(-4000%) rotate(360deg);
+        opacity: 0; 
+    }
+}
+
+@media screen and (max-width: 574px) {
+    .greetings {
+        font-size: 4rem;
+        font-weight: 800;
+    }
+
+    .description {
+        font-size: 1.2rem; /* Tamaño reducido para pantallas pequeñas */
+        margin-bottom: 10px;
+    }
+}

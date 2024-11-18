@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/flowers.png" type="image/x-icon" />
+    <title>Rosas Rojas</title>
+</head>
+<body>
+    <!-- Contenedor para la nieve -->
+    <div id="snow-container"></div>
+
+    <!-- Saludo -->
+    <div class="greetings">
+        <span>H</span>
+        <span>o</span>
+        <span>l</span>
+        <span>a</span>
+        <span>!</span>
+    </div>
+
+    <!-- Descripción -->
+    <div class="description">
+        <span>ESTE DETALLE ES PARA TI PRECIOSA :)</span>
+    </div>
+
+    <!-- Botón -->
+    <div class="button-89">
+        <button class="button-89">
+            <a href="flower.html" style="color: #fff;">Puedes presionar aquí 😋</a>
+        </button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="text">
+      <span>De parte de tu futuro bebé jejeje</span><br>
+      <a href="https://wa.me/573108879505?text=Eres%20maravillosa😉" style="color: #fff;">Joel Steven</a>
+  </div>
+
+    <!-- Script para la nieve -->
+    <script>
+        function createSnowflake() {
+            const container = document.getElementById('snow-container');
+            const snowflake = document.createElement('span');
+            snowflake.classList.add('snowflake');
+
+            let size = Math.random() * 8 + 2; // Tamaño aleatorio entre 2px y 10px
+            snowflake.style.width = size + 'px';
+            snowflake.style.height = size + 'px';
+            snowflake.style.top = Math.random() * innerHeight + 'px';
+            snowflake.style.left = Math.random() * innerWidth + 'px';
+
+            container.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000); // Elimina las partículas tras 5 segundos
+        }
+
+        setInterval(createSnowflake, 150);
+    </script>
+</body>
+</html>
